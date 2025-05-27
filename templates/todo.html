@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>To-Do List</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><div class="container">
+<h2>My To-Do List</h2>
+<form method="POST"><input type="text" name="task" placeholder="New task..." required>
+<button type="submit">Add Task</button></form>
+<ul>{% for todo in todos %}
+<li>{{ todo.task }} <a href="/delete/{{ todo.id }}">❌</a></li>
+{% endfor %}</ul>
+<a href="/logout">Logout</a>
+</div></body></html>
